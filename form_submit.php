@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    if ($_SESSION["csrf"] && !empty($_POST) && isset($_POST["csrf"])) {
+    if (isset($_SESSION["csrf"]) && !empty($_POST) && isset($_POST["csrf"])) {
         $sessid = $_COOKIE[session_name()];
         $csrf_array = $_SESSION["csrf"];
 
