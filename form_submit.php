@@ -8,17 +8,22 @@
 </head>
 <body>
     <?php
-    if ($_SESSION["csrf"] && isset($_POST["submit"]) && isset($_POST["csrf"])) {
+    if ($_SESSION["csrf"] && !empty($_POST) && isset($_POST["csrf"])) {
         $sessid = $_COOKIE[session_name()];
         $csrf_array = $_SESSION["csrf"];
-        if ($csrf_array[$sessid] === $_POST["csrf"]) { ?>
+
+        // check if session's csrf token matches token in the request
+        if ($csrf_array[$sessid] === $_POST["csrf"]) {
+    ?>
             <p><b>MESSAGE:</b> <?= htmlspecialchars($_POST["msg"], ENT_COMPAT, 'UTF-8') ?></p>
             <p><b>TOKEN:</b> <?= $_POST["csrf"] ?></p>
             <p><b>SESSION:</b> <?= session_id() ?></p>
     <?php
         } else {
-            echo "<h2>TOKEN INVALID</h2>";
+            echo "<h2 style='color:red'>TOKEN INVALID</h2>";
         }
+    } else {
+        echo "<h2 style='color:red'>ERROR</h2>";
     }
     ?>
 </body>
