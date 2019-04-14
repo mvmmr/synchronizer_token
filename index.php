@@ -21,10 +21,5 @@
         ?>
     </div>
     <p><small>Session status: <?= isset($_SESSION["logged_in"]) ? "Logged in" : "Logged out" ?></small></p>
-    <?php
-    if (isset($_SESSION["csrf"])) {
-        echo json_encode($_SESSION["csrf"]);
-    }
-    ?>
 </body>
 </html>
