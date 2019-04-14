@@ -13,6 +13,8 @@
     <p>CSRF Synchronizer Token example</p>
     <div>
         <a href="form.php" class="btn">Test Form</a>
+        <br>
+        <br>
         <?php if (isset($_SESSION["logged_in"])) {
             echo '<a href="logout.php" class="btn">Logout</a>';
         } else  {
@@ -20,6 +22,5 @@
         }
         ?>
     </div>
-    <p><small>Session status: <?= isset($_SESSION["logged_in"]) ? "Logged in" : "Logged out" ?></small></p>
 </body>
 </html>
