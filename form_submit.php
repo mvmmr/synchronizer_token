@@ -26,5 +26,7 @@
         echo "<h2 style='color:red'>ERROR</h2>";
     }
     ?>
+    <hr>
+    <a href="form.php">Back</a>
 </body>
 </html>
