@@ -1,0 +1,40 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+h1 {
+  color: tan;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  background: tan;
+  border: 1px solid;
+  border-radius: 0.2em;
+  font-size: 100%;
+}
+
+.btn:hover {
+  background: wheat;
+  cursor: pointer;
+}
+
+input {
+  font-size: 100%;
+  padding: 0.25em 0.4em;
+}
+
+.login-row {
+  margin: 0.25em auto;
+  padding: 0.25em;
+}
+
+.error-msg {
+  color: red;
+  font-size: 90%;
+}
