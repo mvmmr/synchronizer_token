@@ -1,5 +1,21 @@
 # Synchronizer Token Pattern
 
+The **synchronizer token pattern** is a technique used prevent **cross-site request forgery (CSRF)** attacks. In this technique, a secret token is generated and embedded into forms for every request. The tokens are then validated server-side to authenticate the user.
+
+![Token Generation](./img/fig-01.png)
+
+The token is a random number generated at the moment when the user logs in. The token is stored server-side and is tied to the user's session ID.
+
+![Form AJAX](./img/fig-02.png)
+
+When the users visits a form on the website, the page sends an AJAX request to and endpoint that responds with the CSRF token for the user based on the user's session data. This token is then added to the form as a hidden input.
+
+![Form Submit](./img/fig-03.png)
+
+When the user submits the form, the token is sent along with the other parameters. The sent token is again compared with the token stored at the server, and if they match, the server responds with a success message. Otherwise, an error message is shown and the request is not processed.
+
+Now, if an attacker tries to send a request pretending to be the user, they will not have the user's session data or their CSRF value. So because of this, the attacker's request will not be processed by the server.
+
 ## Tasks
 Implement a web application that matches following criteria.
 
